@@ -15,7 +15,10 @@
  */
 package com.example.android.miwok;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 // import android.support.v7.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,5 +30,82 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+        //find the testview component to call intent on
+        TextView numbers = findViewById(R.id.numbers);
+
+        //using anonymous inner class signature to implement the intent call
+        numbers.setOnClickListener(
+                new View.OnClickListener() {
+
+                    //Implementing the onClick method when component is called
+                    @Override
+                    public void onClick(View view) {
+
+                        //explicitly creating an intent to call another activity
+                        Intent intent = new Intent(getApplicationContext(), NumbersActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+        //find the test view component to call intent on
+        TextView phrases = findViewById(R.id.phrases);
+
+        //using anonymous inner class signature to implement the intent call
+        phrases.setOnClickListener(
+                new View.OnClickListener() {
+
+                    //Implementing the onClick method when component is called
+                    @Override
+                    public void onClick(View view) {
+
+                        //explicitly creating an intent to call another activity
+                        Intent intent = new Intent(getApplicationContext(), PhrasesActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+        //find the test view component to call intent on
+        TextView family_members = findViewById(R.id.family);
+
+        //using anonymous inner class signature to implement the intent call
+        family_members.setOnClickListener(
+                new View.OnClickListener() {
+
+                    //Implementing the onClick method when component is called
+                    @Override
+                    public void onClick(View view) {
+
+                        //explicitly creating an intent to call another activity
+                        Intent intent = new Intent(getApplicationContext(), FamilyActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+        //find the test view component to call intent on
+        TextView colors = findViewById(R.id.colors);
+
+        //using anonymous inner class signature to implement the intent call
+        colors.setOnClickListener(
+                new View.OnClickListener() {
+
+                    //Implementing the onClick method when component is called
+                    @Override
+                    public void onClick(View view) {
+
+                        //explicitly creating an intent to call another activity
+                        Intent intent = new Intent(getApplicationContext(), ColorsActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
     }
+
+
+
+
+
+
+
 }
