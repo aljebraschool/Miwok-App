@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/miwok_test_view"
-        tools:text ="lutti">
-    </TextView>
+        android:id="@+id/image_icon"
+        android:src="@mipmap/ic_launcher"
+        android:paddingRight="16dp">
+    </ImageView>
 
-    <TextView
-        android:id="@+id/defaul_text_view"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text = "one">
-    </TextView>
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/miwok_test_view"
+            tools:text ="lutti">
+        </TextView>
+
+        <TextView
+            android:id="@+id/defaul_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text = "one">
+        </TextView>
+
+    </LinearLayout>
 
 
-</ListView>
+
+
+</LinearLayout>
