@@ -28,6 +28,10 @@ To run app in an Android Virtual Device (AVD), we have used the following config
 - API level 30
 - Android 11
 
+# ScreenShots of the Miwok app
+![mikowpic](https://user-images.githubusercontent.com/48502023/184493153-ec0bcb38-42f5-41a7-a25b-489374338684.PNG)
+
+![miwok-app](https://user-images.githubusercontent.com/48502023/184493316-871d41ad-98e9-4c77-8190-e4d65859869a.PNG)
 
 
 
