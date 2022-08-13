@@ -6,8 +6,6 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -113,19 +111,6 @@ public class FamilyActivity extends AppCompatActivity {
                 //this will release the system memory before any audio object is being created
                 releaseMediaPlayer();
 
-                //use the position gotten above to set the resource file for each arrayList
-                //by accessing a public method getAudiofile() in class Word
-                playmusic = MediaPlayer.create(FamilyActivity.this, word.getAudioFile());
-
-
-                //Then start playing your sound with respect to the arraylist object position
-                playmusic.start();
-
-
-                //call the setOnCompletionListener method and
-                // pass the MediaPlayer.OnCompletionLister interface
-                // object to it after it started playing sound
-                playmusic.setOnCompletionListener(completionListener);
 
                 //created the audioManager context servive to request for audio focus from android system
                 audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -157,7 +142,7 @@ public class FamilyActivity extends AppCompatActivity {
             }
         });
 
-        Log.v("FamilyActivity", toString());
+
 
     }
 
