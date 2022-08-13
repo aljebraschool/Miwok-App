@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+
 
 
 import java.util.ArrayList;
@@ -62,16 +62,6 @@ public class FamilyActivity extends AppCompatActivity {
         }
     };
 
-    @Override
-    public String toString() {
-        return "FamilyActivity{" +
-                "playmusic=" + playmusic +
-                ", audioManager=" + audioManager +
-                ", completionListener=" + completionListener +
-                ", onAudioFocusChangeListener=" + onAudioFocusChangeListener +
-                '}';
-
-    }
 
 
     @Override
@@ -104,7 +94,7 @@ public class FamilyActivity extends AppCompatActivity {
          * search for a list view called list_item in the activity
          * number xml then store it as a list view in list view object
          * */
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView =  findViewById(R.id.list);
 
         /*
          * Attached the Array Adapter object to the list view object created above

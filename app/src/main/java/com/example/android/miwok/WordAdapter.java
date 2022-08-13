@@ -1,14 +1,10 @@
 package com.example.android.miwok;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -61,7 +57,7 @@ public class WordAdapter extends ArrayAdapter<Word>{
 
         //find the miwok_translation textview view using convertView
         // (which is a variable of view class) using findViewById
-        TextView miwok_translation = (TextView) convertView.findViewById(R.id.miwok_test_view);
+        TextView miwok_translation =  convertView.findViewById(R.id.miwok_test_view);
 
         //we used our custom class object (currentWord) to access the
         //class getMiwork_translation method then used that to set
@@ -70,7 +66,7 @@ public class WordAdapter extends ArrayAdapter<Word>{
 
         //find the default_translation textview view using convertView
         // (which is a variable of view class) using findViewById
-        TextView defalut_translation = (TextView) convertView.findViewById(R.id.defaul_text_view);
+        TextView defalut_translation =  convertView.findViewById(R.id.defaul_text_view);
 
         //we used our custom class object (currentWord) to access the
         //class getdefault_translation method then used that to set
@@ -79,13 +75,13 @@ public class WordAdapter extends ArrayAdapter<Word>{
 
         //find the image_icon text view using convertView
         //(which is a variable of view class) using findViewById
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.image_icon);
+        ImageView imageView =  convertView.findViewById(R.id.image_icon);
 
 
         //we used our custom class object (currentWord) to access the
         //class getImageIcon method then used that to set
         //the image to be displayed on our image view
-        if(currentWord.hasImage() == true) {
+        if(currentWord.hasImage()) {
             //set image with the text if returned value from hasImage method is true
             imageView.setImageResource(currentWord.getImageIcon());
 

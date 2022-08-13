@@ -100,7 +100,7 @@ public class NumbersActivity extends AppCompatActivity {
         * number xml then store it as a list view in list view object
         * */
 
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView =  findViewById(R.id.list);
 
         /*
         * Attached the Array Adapter object to the list view object created above

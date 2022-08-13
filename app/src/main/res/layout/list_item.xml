@@ -10,7 +10,9 @@
         <ImageView
             android:id="@+id/image_icon"
             android:layout_width="@dimen/list_item_height"
-            android:layout_height="@dimen/list_item_height"></ImageView>
+            android:layout_height="@dimen/list_item_height">
+
+        </ImageView>
 
 
         <RelativeLayout
@@ -29,30 +31,35 @@
                 android:id="@+id/miwok_test_view"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
-                android:gravity="bottom"
+                android:gravity="top"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
-                tools:text="lutti"></TextView>
+                tools:text="lutti">
+
+            </TextView>
 
             <TextView
                 android:id="@+id/defaul_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
-                android:gravity="top"
+                android:gravity="bottom"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@android:color/white"
-                tools:text="one"></TextView>
+                tools:text="one">
+
+            </TextView>
 
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentRight="true"
-
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dp"
-                android:src="@drawable/baseline_play_arrow_white_18"></ImageView>
+                android:src="@drawable/baseline_play_arrow_white_18">
+
+            </ImageView>
 
         </RelativeLayout>
 

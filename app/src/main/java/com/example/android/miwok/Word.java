@@ -67,13 +67,5 @@ public class Word {
             return true; // values are not equal (e.g, 1, 0, 2...) so there's image
     }
 
-    @Override
-    public String toString() {
-        return "Word{" +
-                "miwork_translation='" + miwork_translation + '\'' +
-                ", default_translation='" + default_translation + '\'' +
-                ", imageIcon=" + imageIcon +
-                ", audioFile=" + audioFile +
-                '}';
-    }
+
 }
