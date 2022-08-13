@@ -1,11 +1,3 @@
-# Deprecated Repository
-The associated Nanodegree program **Android Basics Nanodegree by Google** ND803 is deprecated now; therefore, this repository is also deprecated. 
-# Archival Note
-We are archiving this repository because we do not want learners to push personal development to the current repository. If you have any issues or suggestions to make, feel free to:
-- Utilize the https://knowledge.udacity.com/ forum to seek help on content-specific issues.
-- Submit a support ticket along with the link to your forked repository if (learners are) blocked for other reasons. Here are the links for the [retail consumers](https://udacity.zendesk.com/hc/en-us/requests/new) and [enterprise learners](https://udacityenterprise.zendesk.com/hc/en-us/requests/new?ticket_form_id=360000279131). 
-
-
 Miwok App
 ===================================
 
@@ -36,26 +28,8 @@ To run app in an Android Virtual Device (AVD), we have used the following config
 - API level 30
 - Android 11
 
-Note - Gradle Updates
----------------
-
-The Android Studio build system depends on Gradle and its plugins. The Gradle and its plugins have to be updated separately of Android Studio.
-For the updated version, refer to the following updated files:
-~/build.gradle (project) file
-~/app/build.graddle(: app) file
-~/gradle/wrapper/gradle-wrapper.properties file
-You can refer anytime to the latest [Android Gradle plugin release notes](https://developer.android.com/studio/releases/gradle-plugin) for the newest version of plugins.
 
 
-This sample uses the Gradle build system. To build this project, use the
-"gradlew build" command or use "Import Project" in Android Studio.
-
-Troubleshoot
----------------
-- Gradle version and Android Gradle Plugin version should be compatible. See the table [here](https://developer.android.com/studio/releases/gradle-plugin#updating-gradle)
-- Sometimes, if you face unexpected behavior, go to File > Invalidate Caches/Restart. 
-- Android Studio - [How to Change Android SDK Path?](https://stackoverflow.com/questions/16581752/android-studio-how-to-change-android-sdk-path/18409923#18409923)  
-- In case you face some unexpected errors with the Emulator, it will be beneficial to wipe out the AVD data by going to Tools >> Device Manager >> Select Device >> Wipe out option.
 
 
 License
