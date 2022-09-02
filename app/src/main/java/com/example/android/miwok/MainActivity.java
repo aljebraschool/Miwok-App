@@ -19,8 +19,11 @@ import android.os.Bundle;
 // import android.support.v7.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+<<<<<<< HEAD
 
 import com.google.android.material.tabs.TabLayout;
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,11 +38,16 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
         // Create an adapter that knows which fragment should be shown on each page
+<<<<<<< HEAD
         CategoryAdapter adapter = new CategoryAdapter(this, getSupportFragmentManager());
+=======
+        CategoryAdapter adapter = new CategoryAdapter(getSupportFragmentManager());
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
 
+<<<<<<< HEAD
         // Give the TabLayout the ViewPager
         TabLayout tabLayout =  findViewById(R.id.sliding_tabs);
 
@@ -52,10 +60,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
     }
 
 
+<<<<<<< HEAD
 
 
 
@@ -63,4 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 }

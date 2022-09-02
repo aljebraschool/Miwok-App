@@ -4,10 +4,19 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+<<<<<<< HEAD
+<<<<<<<< HEAD:app/src/main/java/com/example/android/miwok/PhrasesFragment.java
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+<<<<<<< HEAD
+========
+>>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6:app/src/main/java/com/example/android/miwok/PhrasesActivity.java
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -17,10 +26,18 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
+<<<<<<< HEAD
+=======
+ * create an instance of this fragment.
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
  */
 public class PhrasesFragment extends Fragment {
 
     private MediaPlayer playmusic;
+<<<<<<< HEAD
+<<<<<<<< HEAD:app/src/main/java/com/example/android/miwok/PhrasesFragment.java
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     private AudioManager audioManager;
 
 
@@ -35,8 +52,11 @@ public class PhrasesFragment extends Fragment {
         }
     };
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     //we declared a class variable (onAudioFocusChangeListener) which will be used to store the object of OnDudioFocusChangeListener interface
     //interface which implements onAudioFocusChange callball method for AudioManager
     private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
@@ -69,16 +89,30 @@ public class PhrasesFragment extends Fragment {
     };
 
 
+<<<<<<< HEAD
+=======
+    public PhrasesFragment() {
+        // Required empty public constructor
+    }
+
+
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+<<<<<<< HEAD
       View view = inflater.inflate(R.layout.word_list, container, false);
+=======
+        View rootView = inflater.inflate(R.layout.word_list, container, false);
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         //storing our numbers using an array list
         ArrayList<Word> words = new ArrayList<>();
 
+<<<<<<< HEAD
         //adding each pharase'a name and its miwok translation to the words array list above
         //repeating the process for the remaining numbers
         words.add(new Word("minto wuksus", "Where are you going?",R.raw.phrase_where_are_you_going));
@@ -91,17 +125,47 @@ public class PhrasesFragment extends Fragment {
         words.add(new Word("әәnәm", "I'm coming",R.raw.phrase_im_coming));
         words.add(new Word("yoowutis", "Let's go", R.raw.phrase_lets_go));
         words.add(new Word("әnni'nem", "Come here", R.raw.phrase_come_here));
+=======
+
+
+        //adding each numbers 1-10 and its miwok translation to the words array list above
+        //word.add("one")
+        Word w = new Word("lutti", "one",R.drawable.number_one, R.raw.number_one);
+        words.add(w);
+        //repeating the process for the remaining numbers
+        words.add(new Word("otiiko", "two", R.drawable.number_two,R.raw.number_two));
+        words.add(new Word("tolookoou", "three", R.drawable.number_three, R.raw.number_three));
+        words.add(new Word("oyyisa", "four", R.drawable.number_four, R.raw.number_four));
+        words.add(new Word("massokka", "five", R.drawable.number_five, R.raw.number_five));
+        words.add(new Word("temmokka", "six", R.drawable.number_six, R.raw.number_six));
+        words.add(new Word("kenekaku", "seven",R.drawable.number_seven, R.raw.number_seven));
+        words.add(new Word("kawinta", "eight", R.drawable.number_eight, R.raw.number_eight));
+        words.add(new Word("wo'e", "nine",R.drawable.number_nine, R.raw.number_nine));
+        words.add(new Word("na'aach", "ten",R.drawable.number_ten, R.raw.number_ten));
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         /*
          * creates an Array Adapter object, itemsAdapter to convert the data source, Array list to a list view
          *  */
+<<<<<<< HEAD
         WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.category_phrases);
+=======
+
+        WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
+
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         /*
          * search for a list view called list_item in the activity
          * number xml then store it as a list view in list view object
          * */
+<<<<<<< HEAD
         ListView listView =  view.findViewById(R.id.list);
+=======
+        ListView listView =  rootView.findViewById(R.id.list);
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         /*
          * Attached the Array Adapter object to the list view object created above
@@ -149,6 +213,7 @@ public class PhrasesFragment extends Fragment {
                 }
 
 
+<<<<<<< HEAD
 
 
             }
@@ -156,6 +221,13 @@ public class PhrasesFragment extends Fragment {
 
 
         return view;
+=======
+            }
+        });
+
+        return rootView;
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     }
 
     //method to clean up our phone memory by releasing the class variable playmusic
@@ -182,6 +254,21 @@ public class PhrasesFragment extends Fragment {
         releaseMediaPlayer();
 
     }
+<<<<<<< HEAD
 
+========
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_category);
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new NumbersFragment())
+                .commit();
+    }
+
+>>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6:app/src/main/java/com/example/android/miwok/PhrasesActivity.java
+
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 }

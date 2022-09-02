@@ -4,9 +4,13 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+<<<<<<< HEAD
 
 import androidx.fragment.app.Fragment;
 
+=======
+import androidx.fragment.app.Fragment;
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +21,28 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
+<<<<<<< HEAD
+ */
+public class NumbersFragment extends Fragment {
+
+    @Override
+<<<<<<<< HEAD:app/src/main/java/com/example/android/miwok/NumbersFragment.java
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.word_list, container, false);
+
+        //storing our numbers using an array list
+        ArrayList<Word> words = new ArrayList<>();
+=======
+ * create an instance of this fragment.
+ *
  */
 public class NumbersFragment extends Fragment {
 
     private MediaPlayer playmusic;
     private AudioManager audioManager;
+
 
     //declared an instance variable (completionListener) which store
     // the objects of the Mediaplayer's OnCompletionListener interface
@@ -67,14 +88,22 @@ public class NumbersFragment extends Fragment {
 
 
 
+
+    public NumbersFragment() {
+        // Required empty public constructor
+    }
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.word_list, container, false);
+         View rootView = inflater.inflate(R.layout.word_list, container, false);
 
         //storing our numbers using an array list
-        ArrayList<Word> words = new ArrayList<>();
+         ArrayList<Word> words = new ArrayList<>();
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
 
 
@@ -106,8 +135,12 @@ public class NumbersFragment extends Fragment {
          * search for a list view called list_item in the activity
          * number xml then store it as a list view in list view object
          * */
+<<<<<<< HEAD
 
         ListView listView =  view.findViewById(R.id.list);
+=======
+        ListView listView =  rootView.findViewById(R.id.list);
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         /*
          * Attached the Array Adapter object to the list view object created above
@@ -158,7 +191,12 @@ public class NumbersFragment extends Fragment {
             }
         });
 
+<<<<<<< HEAD
         return view;
+=======
+    return rootView;
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     }
 
     //method to clean up our phone memory by releasing the class variable playmusic
@@ -178,12 +216,31 @@ public class NumbersFragment extends Fragment {
 
     }
 
+<<<<<<< HEAD
+=======
+    //method onStop used to reclaim app memory when the user leaves the app at any point
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     @Override
     public void onStop() {
         super.onStop();
         releaseMediaPlayer();
+<<<<<<< HEAD
     }
 
 
 
+========
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_category);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new NumbersFragment())
+                .commit();
+    }
+>>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6:app/src/main/java/com/example/android/miwok/NumbersActivity.java
+=======
+
+    }
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 }

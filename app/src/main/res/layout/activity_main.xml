@@ -15,12 +15,17 @@
 <!-- Layout for the main screen -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
+=======
+    android:id="@+id/main_activity"
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     android:layout_width="match_parent"
     android:background="@color/primary_color"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+<<<<<<< HEAD
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
@@ -38,3 +43,10 @@
 
 
 </LinearLayout>
+=======
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6

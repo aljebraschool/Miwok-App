@@ -1,13 +1,18 @@
 package com.example.android.miwok;
 
+<<<<<<< HEAD
 
 import android.content.Context;
 
 import androidx.annotation.Nullable;
+=======
+import androidx.annotation.NonNull;
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+<<<<<<< HEAD
 
 /**
  * Provides the appropriate {@link Fragment} for a view pager.
@@ -21,6 +26,13 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     public CategoryAdapter(Context context, FragmentManager fm) {
         super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.context = context;
+=======
+public class CategoryAdapter extends FragmentPagerAdapter {
+
+
+    public CategoryAdapter(@NonNull FragmentManager fm) {
+        super(fm);
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     }
 
     public Fragment getItem(int position) {
@@ -35,10 +47,17 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Return the total number of pages.
+     */
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     @Override
     public int getCount() {
         return 4;
     }
+<<<<<<< HEAD
 
     @Nullable
     @Override
@@ -57,4 +76,6 @@ public class CategoryAdapter extends FragmentPagerAdapter {
 
 
 
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 }

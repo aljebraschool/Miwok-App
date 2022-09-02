@@ -7,15 +7,21 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+<<<<<<< HEAD
 import android.util.Log;
+=======
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+<<<<<<< HEAD
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
+<<<<<<<< HEAD:app/src/main/java/com/example/android/miwok/ColorsFragment.java
 /**
  * A simple {@link Fragment} subclass.
 
@@ -27,6 +33,21 @@ public class ColorsFragment extends Fragment {
     private MediaPlayer playmusic;
     private AudioManager audioManager;
 
+=======
+
+import java.util.ArrayList;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * create an instance of this fragment.
+ */
+public class ColorsFragment extends Fragment {
+
+    private MediaPlayer playmusic;
+    private AudioManager audioManager;
+
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     //declared an instance variable (completionListener) which store
     // the objects of the Mediaplayer's OnCompletionListener interface
     //to avoid creating new object everytime onCompletionListener method is called to release the memory
@@ -47,17 +68,32 @@ public class ColorsFragment extends Fragment {
         public void onAudioFocusChange(int changeFocus) {
 
             //checks if audiofocus was completely lost
+<<<<<<< HEAD
             if (changeFocus == AudioManager.AUDIOFOCUS_LOSS) {
+=======
+            if(changeFocus == AudioManager.AUDIOFOCUS_LOSS)
+            {
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
                 releaseMediaPlayer(); //call releaseMediaPlayer method
             }
 
             //checks if audiofocus was completely gained
+<<<<<<< HEAD
             else if (changeFocus == AudioManager.AUDIOFOCUS_GAIN) {
+=======
+            else if(changeFocus == AudioManager.AUDIOFOCUS_GAIN)
+            {
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
                 playmusic.start();
             }
 
             //checks if audioFocus was either temporary lost due to incoming call or notifivication
+<<<<<<< HEAD
             else if (changeFocus == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || changeFocus == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+=======
+            else if(changeFocus == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || changeFocus == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK)
+            {
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
                 playmusic.pause();      //pause the music
                 playmusic.seekTo(0); //start afresh
             }
@@ -68,15 +104,31 @@ public class ColorsFragment extends Fragment {
 
 
 
+<<<<<<< HEAD
+=======
+
+    public ColorsFragment() {
+        // Required empty public constructor
+    }
+
+
+
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+<<<<<<< HEAD
         View view = inflater.inflate(R.layout.word_list, container, false);
+=======
+        View rootView = inflater.inflate(R.layout.word_list, container, false);
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         //storing our numbers using an array list
         ArrayList<Word> words = new ArrayList<>();
 
+<<<<<<< HEAD
         //adding each color names and its miwok translation to the words array list above
         //repeating the process for the remaining numbers
         words.add(new Word("weṭeṭṭi", "red", R.drawable.color_red, R.raw.color_red));
@@ -87,17 +139,47 @@ public class ColorsFragment extends Fragment {
         words.add(new Word("kelelli", "white", R.drawable.color_white, R.raw.color_white));
         words.add(new Word("ṭopiisә", "dusty yellow", R.drawable.color_dusty_yellow, R.raw.color_dusty_yellow));
         words.add(new Word("chiwiiṭә", "mustard yellow", R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow));
+=======
+
+
+        //adding each numbers 1-10 and its miwok translation to the words array list above
+        //word.add("one")
+        Word w = new Word("lutti", "one",R.drawable.number_one, R.raw.number_one);
+        words.add(w);
+        //repeating the process for the remaining numbers
+        words.add(new Word("otiiko", "two", R.drawable.number_two,R.raw.number_two));
+        words.add(new Word("tolookoou", "three", R.drawable.number_three, R.raw.number_three));
+        words.add(new Word("oyyisa", "four", R.drawable.number_four, R.raw.number_four));
+        words.add(new Word("massokka", "five", R.drawable.number_five, R.raw.number_five));
+        words.add(new Word("temmokka", "six", R.drawable.number_six, R.raw.number_six));
+        words.add(new Word("kenekaku", "seven",R.drawable.number_seven, R.raw.number_seven));
+        words.add(new Word("kawinta", "eight", R.drawable.number_eight, R.raw.number_eight));
+        words.add(new Word("wo'e", "nine",R.drawable.number_nine, R.raw.number_nine));
+        words.add(new Word("na'aach", "ten",R.drawable.number_ten, R.raw.number_ten));
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         /*
          * creates an Array Adapter object, itemsAdapter to convert the data source, Array list to a list view
          *  */
+<<<<<<< HEAD
         WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.primary_color);
+=======
+
+        WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
+
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         /*
          * search for a list view called list_item in the activity
          * number xml then store it as a list view in list view object
          * */
+<<<<<<< HEAD
         ListView listView = view.findViewById(R.id.list);
+=======
+        ListView listView =  rootView.findViewById(R.id.list);
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
 
         /*
          * Attached the Array Adapter object to the list view object created above
@@ -113,10 +195,17 @@ public class ColorsFragment extends Fragment {
                 //then store that in Word variable word
                 Word word = words.get(position);
 
+<<<<<<< HEAD
 
                 //this will release the system memory before any audio object is being created
                 releaseMediaPlayer();
 
+=======
+                //this will release the system memory before any audio object is being created
+                releaseMediaPlayer();
+
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
                 //created the audioManager context servive to request for audio focus from android system
                 audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
@@ -128,7 +217,12 @@ public class ColorsFragment extends Fragment {
                 int result = audioManager.requestAudioFocus(onAudioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
                 //if granted
+<<<<<<< HEAD
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+=======
+                if(result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED)
+                {
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
                     //use the position gotten above to set the resource file for each arrayList
                     //by accessing a public method getAudiofile() in class Word
                     playmusic = MediaPlayer.create(getActivity(), word.getAudioFile());
@@ -141,6 +235,7 @@ public class ColorsFragment extends Fragment {
                     // object to it after it started playing sound
                     playmusic.setOnCompletionListener(completionListener);
 
+<<<<<<< HEAD
 
                 }
             }
@@ -149,6 +244,16 @@ public class ColorsFragment extends Fragment {
         Log.v("ColorsFragment", "colors");
 
         return view;
+=======
+                }
+
+
+            }
+        });
+
+        return rootView;
+
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
     }
 
     //method to clean up our phone memory by releasing the class variable playmusic
@@ -176,6 +281,7 @@ public class ColorsFragment extends Fragment {
 
     }
 
+<<<<<<< HEAD
     @Override
     public String toString() {
         return "ColorsFragment{" +
@@ -186,3 +292,19 @@ public class ColorsFragment extends Fragment {
                 '}';
     }
 }
+========
+public class ColorsActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_category);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new NumbersFragment())
+                .commit();
+        }
+    }
+>>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6:app/src/main/java/com/example/android/miwok/ColorsActivity.java
+=======
+}
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
