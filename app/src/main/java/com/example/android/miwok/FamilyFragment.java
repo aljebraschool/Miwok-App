@@ -1,21 +1,24 @@
 package com.example.android.miwok;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-
-
 import java.util.ArrayList;
 
-public class FamilyActivity extends AppCompatActivity {
-
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class FamilyFragment extends Fragment {
     private MediaPlayer playmusic;
 
     private AudioManager audioManager;
@@ -62,11 +65,12 @@ public class FamilyActivity extends AppCompatActivity {
 
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+       View view = inflater.inflate(R.layout.word_list, container, false);
         //storing our numbers using an array list
         ArrayList<Word> words = new ArrayList<>();
 
@@ -86,13 +90,13 @@ public class FamilyActivity extends AppCompatActivity {
         /*
          * creates an Array Adapter object, itemsAdapter to convert the data source, Array list to a list view
          *  */
-        WordAdapter itemsAdapter = new WordAdapter(this, words, R.color.category_family);
+        WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.category_family);
 
         /*
          * search for a list view called list_item in the activity
          * number xml then store it as a list view in list view object
          * */
-        ListView listView =  findViewById(R.id.list);
+        ListView listView =  view.findViewById(R.id.list);
 
         /*
          * Attached the Array Adapter object to the list view object created above
@@ -113,7 +117,7 @@ public class FamilyActivity extends AppCompatActivity {
 
 
                 //created the audioManager context servive to request for audio focus from android system
-                audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
                 //request for audio focus using requestAudioFocus method
                 //by passing the following parameters
@@ -126,7 +130,7 @@ public class FamilyActivity extends AppCompatActivity {
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                     //use the position gotten above to set the resource file for each arrayList
                     //by accessing a public method getAudiofile() in class Word
-                    playmusic = MediaPlayer.create(FamilyActivity.this, word.getAudioFile());
+                    playmusic = MediaPlayer.create(getActivity(), word.getAudioFile());
 
                     //Then start playing your sound with respect to the arraylist object position
                     playmusic.start();
@@ -143,9 +147,8 @@ public class FamilyActivity extends AppCompatActivity {
         });
 
 
-
+        return view;
     }
-
 
     //method to clean up our phone memory by releasing the class variable playmusic
     //when it's not pointing to any object in memory
@@ -163,10 +166,9 @@ public class FamilyActivity extends AppCompatActivity {
         }
     }
 
-
     //method onStop used to reclaim app memory when the user leaves the app at any point
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
         releaseMediaPlayer();
 

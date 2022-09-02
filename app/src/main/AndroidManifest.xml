@@ -8,22 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ColorsActivity"
-            android:exported="false"
-            android:label="@string/category_colors" />
-        <activity
-            android:name=".FamilyActivity"
-            android:exported="false"
-            android:label="@string/category_family" />
-        <activity
-            android:name=".PhrasesActivity"
-            android:exported="false"
-            android:label="@string/category_phrases" />
-        <activity
-            android:name=".NumbersActivity"
-            android:exported="false"
-            android:label="@string/category_numbers" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -33,6 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.android.miwok.MainActivity">
+        </meta-data>
     </application>
 
 </manifest>

@@ -1,21 +1,28 @@
 package com.example.android.miwok;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class NumbersActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class PhrasesFragment extends Fragment {
 
     private MediaPlayer playmusic;
     private AudioManager audioManager;
+
 
     //declared an instance variable (completionListener) which store
     // the objects of the Mediaplayer's OnCompletionListener interface
@@ -27,6 +34,8 @@ public class NumbersActivity extends AppCompatActivity {
             releaseMediaPlayer();
         }
     };
+
+
 
     //we declared a class variable (onAudioFocusChangeListener) which will be used to store the object of OnDudioFocusChangeListener interface
     //interface which implements onAudioFocusChange callball method for AudioManager
@@ -62,49 +71,41 @@ public class NumbersActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+      View view = inflater.inflate(R.layout.word_list, container, false);
 
         //storing our numbers using an array list
         ArrayList<Word> words = new ArrayList<>();
 
-
-
-        //adding each numbers 1-10 and its miwok translation to the words array list above
-        //word.add("one")
-        Word w = new Word("lutti", "one",R.drawable.number_one, R.raw.number_one);
-        words.add(w);
+        //adding each pharase'a name and its miwok translation to the words array list above
         //repeating the process for the remaining numbers
-        words.add(new Word("otiiko", "two", R.drawable.number_two,R.raw.number_two));
-        words.add(new Word("tolookoou", "three", R.drawable.number_three, R.raw.number_three));
-        words.add(new Word("oyyisa", "four", R.drawable.number_four, R.raw.number_four));
-        words.add(new Word("massokka", "five", R.drawable.number_five, R.raw.number_five));
-        words.add(new Word("temmokka", "six", R.drawable.number_six, R.raw.number_six));
-        words.add(new Word("kenekaku", "seven",R.drawable.number_seven, R.raw.number_seven));
-        words.add(new Word("kawinta", "eight", R.drawable.number_eight, R.raw.number_eight));
-        words.add(new Word("wo'e", "nine",R.drawable.number_nine, R.raw.number_nine));
-        words.add(new Word("na'aach", "ten",R.drawable.number_ten, R.raw.number_ten));
-
-
-        /*
-        * creates an Array Adapter object, itemsAdapter to convert the data source, Array list to a list view
-        *  */
-
-        WordAdapter itemsAdapter = new WordAdapter(this, words, R.color.category_numbers);
-
-
+        words.add(new Word("minto wuksus", "Where are you going?",R.raw.phrase_where_are_you_going));
+        words.add(new Word("tinnә oyaase'nә", "What is your name", R.raw.phrase_what_is_your_name));
+        words.add(new Word("oyaaset...", "My name is...", R.raw.phrase_my_name_is));
+        words.add(new Word("michәksәs?", "How are you feeling?",R.raw.phrase_how_are_you_feeling));
+        words.add(new Word("kuchi achit", "I'm felling good",R.raw.phrase_im_feeling_good));
+        words.add(new Word("әәnәs'aa?", "Are you coming?",R.raw.phrase_are_you_coming));
+        words.add(new Word("hәә’ әәnәm", "Yes, I'm coming", R.raw.phrase_yes_im_coming));
+        words.add(new Word("әәnәm", "I'm coming",R.raw.phrase_im_coming));
+        words.add(new Word("yoowutis", "Let's go", R.raw.phrase_lets_go));
+        words.add(new Word("әnni'nem", "Come here", R.raw.phrase_come_here));
 
         /*
-        * search for a list view called list_item in the activity
-        * number xml then store it as a list view in list view object
-        * */
-
-        ListView listView =  findViewById(R.id.list);
+         * creates an Array Adapter object, itemsAdapter to convert the data source, Array list to a list view
+         *  */
+        WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.category_phrases);
 
         /*
-        * Attached the Array Adapter object to the list view object created above
-        *  */
+         * search for a list view called list_item in the activity
+         * number xml then store it as a list view in list view object
+         * */
+        ListView listView =  view.findViewById(R.id.list);
+
+        /*
+         * Attached the Array Adapter object to the list view object created above
+         *  */
         listView.setAdapter(itemsAdapter);
 
 
@@ -121,7 +122,7 @@ public class NumbersActivity extends AppCompatActivity {
 
 
                 //created the audioManager context servive to request for audio focus from android system
-                audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
                 //request for audio focus using requestAudioFocus method
                 //by passing the following parameters
@@ -135,7 +136,7 @@ public class NumbersActivity extends AppCompatActivity {
                 {
                     //use the position gotten above to set the resource file for each arrayList
                     //by accessing a public method getAudiofile() in class Word
-                    playmusic = MediaPlayer.create(NumbersActivity.this, word.getAudioFile());
+                    playmusic = MediaPlayer.create(getActivity(), word.getAudioFile());
 
                     //Then start playing your sound with respect to the arraylist object position
                     playmusic.start();
@@ -148,11 +149,13 @@ public class NumbersActivity extends AppCompatActivity {
                 }
 
 
+
+
             }
         });
 
 
-
+        return view;
     }
 
     //method to clean up our phone memory by releasing the class variable playmusic
@@ -174,10 +177,11 @@ public class NumbersActivity extends AppCompatActivity {
 
     //method onStop used to reclaim app memory when the user leaves the app at any point
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
         releaseMediaPlayer();
 
     }
+
 
 }
