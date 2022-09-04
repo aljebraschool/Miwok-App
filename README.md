@@ -31,7 +31,8 @@ To run app in an Android Virtual Device (AVD), we have used the following config
 # ScreenShots of the Miwok app
 ![mikowpic](https://user-images.githubusercontent.com/48502023/184493153-ec0bcb38-42f5-41a7-a25b-489374338684.PNG)
 
-![miwok-app](https://user-images.githubusercontent.com/48502023/184493316-871d41ad-98e9-4c77-8190-e4d65859869a.PNG)
+![Miwok-App wit Tabs](https://user-images.githubusercontent.com/48502023/188056986-967069d4-7f6d-4fc1-bb4a-9a616ff3e35b.PNG)
+
 
 
 

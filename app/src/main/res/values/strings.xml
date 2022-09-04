@@ -26,7 +26,15 @@
     <string name="category_numbers">Numbers</string>
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
+<<<<<<< HEAD
     <string name="category_family">Family</string>
+=======
+<<<<<<< HEAD
+    <string name="category_family">Family</string>
+=======
+    <string name="category_family">Family Members</string>
+>>>>>>> 09273ea512c49d09a0aa99e882e52cc8354b0bf6
+>>>>>>> 1a09c7efcb452731551c7f705360f59ae4b6677f
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
