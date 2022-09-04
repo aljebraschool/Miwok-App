@@ -17,12 +17,15 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     //context is needed to access each string resource
     private Context context;
 
-    
+
+    //constructor to initialize this class object when created
     public CategoryAdapter(Context context, FragmentManager fm) {
         super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.context = context;
     }
 
+    //overwritten method to return content in each fragment
+    @Override
     public Fragment getItem(int position) {
         if (position == 0) {
             return new NumbersFragment();
@@ -40,6 +43,8 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         return 4;
     }
 
+    //overwritten method to return title in each fragment
+    //stored in string resource
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {

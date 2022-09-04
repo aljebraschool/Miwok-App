@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class PhrasesFragment extends Fragment {
-
+    //declaring class variables
     private MediaPlayer playmusic;
     private AudioManager audioManager;
 
@@ -35,7 +35,6 @@ public class PhrasesFragment extends Fragment {
     };
 
 
-
     //we declared a class variable (onAudioFocusChangeListener) which will be used to store the object of OnDudioFocusChangeListener interface
     //interface which implements onAudioFocusChange callball method for AudioManager
     private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
@@ -45,20 +44,17 @@ public class PhrasesFragment extends Fragment {
         public void onAudioFocusChange(int changeFocus) {
 
             //checks if audiofocus was completely lost
-            if(changeFocus == AudioManager.AUDIOFOCUS_LOSS)
-            {
+            if (changeFocus == AudioManager.AUDIOFOCUS_LOSS) {
                 releaseMediaPlayer(); //call releaseMediaPlayer method
             }
 
             //checks if audiofocus was completely gained
-            else if(changeFocus == AudioManager.AUDIOFOCUS_GAIN)
-            {
+            else if (changeFocus == AudioManager.AUDIOFOCUS_GAIN) {
                 playmusic.start();
             }
 
             //checks if audioFocus was either temporary lost due to incoming call or notifivication
-            else if(changeFocus == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || changeFocus == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK)
-            {
+            else if (changeFocus == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || changeFocus == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
                 playmusic.pause();      //pause the music
                 playmusic.seekTo(0); //start afresh
             }
@@ -68,12 +64,11 @@ public class PhrasesFragment extends Fragment {
     };
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-      View view = inflater.inflate(R.layout.word_list, container, false);
+        View view = inflater.inflate(R.layout.word_list, container, false);
 
         //storing our numbers using an array list
         ArrayList<Word> words = new ArrayList<>();
@@ -100,7 +95,7 @@ public class PhrasesFragment extends Fragment {
          * search for a list view called list_item in the activity
          * number xml then store it as a list view in list view object
          * */
-        ListView listView =  view.findViewById(R.id.list);
+        ListView listView = view.findViewById(R.id.list);
 
         /*
          * Attached the Array Adapter object to the list view object created above
@@ -131,8 +126,7 @@ public class PhrasesFragment extends Fragment {
                 int result = audioManager.requestAudioFocus(onAudioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
                 //if granted
-                if(result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED)
-                {
+                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                     //use the position gotten above to set the resource file for each arrayList
                     //by accessing a public method getAudiofile() in class Word
                     playmusic = MediaPlayer.create(getActivity(), word.getAudioFile());
@@ -146,8 +140,6 @@ public class PhrasesFragment extends Fragment {
                     playmusic.setOnCompletionListener(completionListener);
 
                 }
-
-
 
 
             }

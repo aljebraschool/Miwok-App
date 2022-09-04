@@ -1,28 +1,25 @@
 package com.example.android.miwok;
 
-import android.content.Context;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
+        import android.content.Context;
+        import android.media.AudioManager;
+        import android.media.MediaPlayer;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.AdapterView;
+        import android.widget.ListView;
 
-import androidx.fragment.app.Fragment;
+        import androidx.fragment.app.Fragment;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
-
  */
 public class ColorsFragment extends Fragment {
-
-
-
+    //declaring class variables
     private MediaPlayer playmusic;
     private AudioManager audioManager;
 
@@ -64,7 +61,6 @@ public class ColorsFragment extends Fragment {
 
         }
     };
-
 
 
     @Override
@@ -116,7 +112,7 @@ public class ColorsFragment extends Fragment {
                 //this will release the system memory before any audio object is being created
                 releaseMediaPlayer();
 
-                //created the audioManager context servive to request for audio focus from android system
+                //created the audioManager context service to request for audio focus from android system
                 audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
                 //request for audio focus using requestAudioFocus method
@@ -145,7 +141,6 @@ public class ColorsFragment extends Fragment {
             }
         });
 
-        Log.v("ColorsFragment", "colors");
 
         return view;
     }
@@ -175,13 +170,4 @@ public class ColorsFragment extends Fragment {
 
     }
 
-    @Override
-    public String toString() {
-        return "ColorsFragment{" +
-                "playmusic=" + playmusic +
-                ", audioManager=" + audioManager +
-                ", completionListener=" + completionListener +
-                ", onAudioFocusChangeListener=" + onAudioFocusChangeListener +
-                '}';
-    }
 }

@@ -18,8 +18,8 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class FamilyFragment extends Fragment {
+    //declaring the class variables
     private MediaPlayer playmusic;
-
     private AudioManager audioManager;
 
     //declared an instance variable (completionListener) which store
@@ -63,13 +63,11 @@ public class FamilyFragment extends Fragment {
     };
 
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.word_list, container, false);
+        View view = inflater.inflate(R.layout.word_list, container, false);
         //storing our numbers using an array list
         ArrayList<Word> words = new ArrayList<>();
 
@@ -95,7 +93,7 @@ public class FamilyFragment extends Fragment {
          * search for a list view called list_item in the activity
          * number xml then store it as a list view in list view object
          * */
-        ListView listView =  view.findViewById(R.id.list);
+        ListView listView = view.findViewById(R.id.list);
 
         /*
          * Attached the Array Adapter object to the list view object created above

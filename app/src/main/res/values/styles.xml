@@ -32,7 +32,7 @@
     </style>
 
     <!-- App bar style -->
-    <style name="MiwokAppBarStyle"  >
+    <style name="MiwokAppBarStyle">
         <!-- Remove the shadow below the app bar -->
         <item name="elevation">0dp</item>
     </style>
